@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+    
+    <context:annotation-config/>
+
+	 <!-- context:component-scan base-package="com.aa.parts"></context:component-scan-->
+	 
+     <bean id="hondaCar" class="com.aa.entity.Car">
+     	<constructor-arg index="0" ref="honda"/>
+     	<constructor-arg index="1" ref="engine"/>
+     	<constructor-arg index="2" ref="steel190"/>
+     </bean>
+
+     <bean id="toyotaCar" class="com.aa.entity.Car">
+     	<constructor-arg index="0" ref="toyota"/>
+     	<constructor-arg index="1" ref="v4"/>
+     	<constructor-arg index="2" ref="steel190"/>
+     </bean>
+     
+     <bean id="van" class="com.aa.entity.Van">
+     	<property name="res" ref="res1"></property>
+     </bean>
+     
+     <bean id="modelx" class="com.aa.entity.Van">
+     	<property name="make" ref="manufacturer"></property>
+     	<property name="res" ref="res1"></property>
+     </bean>
+     
+     <bean id="toyota" class="com.aa.parts.Manufacturer">
+     	<property name="name" value="Toyota"/>
+     </bean>
+
+     <bean id="honda" class="com.aa.parts.Manufacturer">
+     	<property name="name" value="Honda"/>
+     </bean>
+
+     <bean id="v4" class="com.aa.parts.Engine">
+     	<property name="type" value="v4"/>
+     </bean>
+
+     <bean id="res1" class="com.aa.parts.EntertainmentSystem"/>
+
+     <bean id="steel190" class="com.aa.parts.Wheel">
+     	<property name="radius" value="190"/>
+     	<property name="type" value="steel"/>
+     </bean>
+
+	 
+    
+</beans>

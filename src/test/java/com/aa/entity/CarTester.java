@@ -13,6 +13,9 @@ public class CarTester {
 		ApplicationContext annotationContext = new AnnotationConfigApplicationContext(Car.class);
 		ApplicationContext xmlContext = new ClassPathXmlApplicationContext("spring-beans.xml");
 		
+		System.out.println("new line added");
+		
+		
 	/*	Wheel wheel = (Wheel)annotationContext.getBean("wheel");
 		System.out.println(wheel.getRadius());
 		wheel.setRadius(200);
